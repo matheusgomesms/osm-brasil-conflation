@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortaleza Traffic Lights - OSM Conflation</title>
+    
+    <!-- MapLibre GL JS CSS -->
+    <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+    
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        #map { height: 100vh; width: 100%; }
+        
+        /* Custom Popup Styling */
+        .maplibregl-popup-content {
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 320px;
+            max-height: 400px;
+            overflow-y: auto; /* Scroll if too much raw data */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Raw Data Table in Popup */
+        .prop-container {
+            font-family: "Consolas", "Monaco", monospace; /* Code font */
+            font-size: 12px;
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+        }
+        .prop-row {
+            border-bottom: 1px dashed #ddd; /* Light separator */
+            padding: 2px 0;
+            word-break: break-all;
+        }
+        .prop-key {
+            font-weight: bold;
+            color: #000080; /* Navy blue for keys */
+        }
+        .prop-val {
+            color: #000;
+        }
+
+        /* Edit Button */
+        .btn-edit {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 8px 0;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 13px;
+            transition: opacity 0.2s;
+        }
+        .btn-edit:hover { opacity: 0.9; }
+
+        /* Interactive Legend */
+        #legend {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            z-index: 1;
+            width: 160px;
+        }
+        .legend-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .legend-item { 
+            margin-bottom: 8px; 
+            display: flex; 
+            align-items: center; 
+            cursor: pointer; 
+            font-size: 13px;
+            user-select: none; /* Prevent text selection on quick clicks */
+            transition: opacity 0.2s;
+        }
+        .legend-item:hover { opacity: 0.8; }
+        
+        /* Visual style for disabled layers */
+        .legend-item.disabled {
+            opacity: 0.4;
+            text-decoration: line-through;
+        }
+
+        .dot { 
+            width: 12px; 
+            height: 12px; 
+            border-radius: 50%; 
+            display: inline-block; 
+            margin-right: 10px; 
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div id="legend">
+    <div class="legend-title">Layers</div>
+    <!-- IDs match the logic in JS -->
+    <div class="legend-item" onclick="toggleLayer('missing_layer', this)">
+        <span class="dot" style="background: #ff0000;"></span> Missing in OSM
+    </div>
+    <div class="legend-item" onclick="toggleLayer('incomplete_layer', this)">
+        <span class="dot" style="background: #ffa500;"></span> Incomplete Data
+    </div>
+    <div class="legend-item" onclick="toggleLayer('extra_layer', this)">
+        <span class="dot" style="background: #0000ff;"></span> Extra in OSM
+    </div>
+</div>
+
+<div id="map"></div>
+
+<!-- MapLibre GL JS -->
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+<script>
+    // 1. Initialize Map
+    const map = new maplibregl.Map({
+        container: 'map',
+        style: 'https://tiles.openfreemap.org/styles/positron', 
+        center: [-38.5267, -3.7319], // Fortaleza
+        zoom: 13
+    });
+
+    map.addControl(new maplibregl.NavigationControl());
+
+    // --- HELPER 1: Generate iD Editor Link ---
+    function getEditLink(lat, lon, osmId) {
+        if (osmId) {
+            return `https://www.openstreetmap.org/edit?editor=id&node=${osmId}`;
+        } else {
+            return `https://www.openstreetmap.org/edit?editor=id#map=19/${lat}/${lon}`;
+        }
+    }
+
+    // --- HELPER 2: Create HTML Table from Raw Properties ---
+    function createTable(props) {
+        let html = '<div class="prop-container">';
+        for (const [key, value] of Object.entries(props)) {
+            // Skip internal geometry properties
+            if (key === 'geometry' || key === 'geom_point') continue;
+        
+            // This structure ensures "key=value" is copied together
+            html += `<div class="prop-row">
+                <span class="prop-key">${key}</span>=<span class="prop-val">${value}</span>
+            </div>`;
+        }
+        html += '</div>';
+        return html;
+    }
+
+    // --- HELPER 3: Toggle Layers (Legend Logic) ---
+    // Make it global so the HTML onclick works
+    window.toggleLayer = function(layerId, element) {
+        const visibility = map.getLayoutProperty(layerId, 'visibility');
+        
+        if (visibility === 'visible') {
+            map.setLayoutProperty(layerId, 'visibility', 'none');
+            element.classList.add('disabled');
+        } else {
+            map.setLayoutProperty(layerId, 'visibility', 'visible');
+            element.classList.remove('disabled');
+        }
+    }
+
+    // 2. Load Data
+    map.on('load', () => {
+
+        // --- SOURCE 1: Missing in OSM (Red) ---
+        map.addSource('missing_source', { type: 'geojson', data: 'data/output/1_missing_in_osm.geojson' });
+        map.addLayer({
+            'id': 'missing_layer',
+            'type': 'circle',
+            'source': 'missing_source',
+            'layout': { 'visibility': 'visible' }, // Explicitly set visible
+            'paint': {
+                'circle-radius': 6,
+                'circle-color': '#ff0000',
+                'circle-stroke-width': 1,
+                'circle-stroke-color': '#ffffff'
+            }
+        });
+
+        // --- SOURCE 2: Incomplete Data (Orange) ---
+        map.addSource('incomplete_source', { type: 'geojson', data: 'data/output/2_incomplete_osm_data.geojson' });
+        map.addLayer({
+            'id': 'incomplete_layer',
+            'type': 'circle',
+            'source': 'incomplete_source',
+            'layout': { 'visibility': 'visible' },
+            'paint': {
+                'circle-radius': 6,
+                'circle-color': '#ffa500',
+                'circle-stroke-width': 1,
+                'circle-stroke-color': '#ffffff'
+            }
+        });
+
+        // --- SOURCE 3: Extra in OSM (Blue) ---
+        map.addSource('extra_source', { type: 'geojson', data: 'data/output/3_extra_in_osm.geojson' });
+        map.addLayer({
+            'id': 'extra_layer',
+            'type': 'circle',
+            'source': 'extra_source',
+            'layout': { 'visibility': 'visible' },
+            'paint': {
+                'circle-radius': 5,
+                'circle-color': '#0000ff',
+                'circle-opacity': 0.6,
+                'circle-stroke-width': 0
+            }
+        });
+    });
+
+    // 3. Click Interactions
+    map.on('click', (e) => {
+        // Query only visible layers
+        const features = map.queryRenderedFeatures(e.point, {
+            layers: ['missing_layer', 'incomplete_layer', 'extra_layer']
+        });
+
+        if (!features.length) return;
+
+        const feature = features[0];
+        const props = feature.properties;
+        const coordinates = feature.geometry.coordinates.slice();
+        const layerId = feature.layer.id;
+
+        // Ensure popup stays on map when wrapped
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        let html = '';
+
+        if (layerId === 'missing_layer') {
+            const url = getEditLink(coordinates[1], coordinates[0], null);
+            html = `
+                <h3 style="margin:0 0 10px 0; color:#d32f2f;">Missing in OSM</h3>
+                ${createTable(props)}
+                <a href="${url}" target="_blank" class="btn-edit" style="background:#d32f2f;">Add to OSM</a>
+            `;
+        } 
+        else if (layerId === 'incomplete_layer') {
+            const url = getEditLink(null, null, props.osm_id);
+            html = `
+                <h3 style="margin:0 0 10px 0; color:#f57c00;">Update Required</h3>
+                ${createTable(props)}
+                <a href="${url}" target="_blank" class="btn-edit" style="background:#f57c00;">Edit Node</a>
+            `;
+        } 
+        else if (layerId === 'extra_layer') {
+            // Keep Extra simple as requested
+            const url = getEditLink(null, null, props.osm_id);
+            html = `
+                <h3 style="margin:0 0 10px 0; color:#1976d2;">Extra in OSM</h3>
+                <strong>OSM ID:</strong> ${props.osm_id}<br>
+                <small>This traffic light exists in OSM but was not found in the Government dataset.</small><br><br>
+                <a href="${url}" target="_blank" class="btn-edit" style="background:#1976d2;">Inspect</a>
+            `;
+        }
+
+        new maplibregl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(html)
+            .addTo(map);
+    });
+
+    // 4. Cursor Styling (Pointer on hover)
+    const layers = ['missing_layer', 'incomplete_layer', 'extra_layer'];
+    layers.forEach(layer => {
+        map.on('mouseenter', layer, () => { map.getCanvas().style.cursor = 'pointer'; });
+        map.on('mouseleave', layer, () => { map.getCanvas().style.cursor = ''; });
+    });
+
+</script>
+
+</body>
+</html>
