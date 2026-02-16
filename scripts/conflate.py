@@ -170,7 +170,7 @@ def run_conflation(input_file, output_dir):
             props = {
                 "osm_id": row.get('osm_id'),
                 "ref": str(local_ref),
-                "check_date": str(local_date) if not pd.isna(local_date) else ""
+                "start_date": str(local_date) if not pd.isna(local_date) else ""
             }
             incomplete_list.append({
                 "type": "Feature",
