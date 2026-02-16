@@ -45,7 +45,11 @@ def main():
 
     # 3. Conflate
     print("--- 2. Running Conflation Script ---")
-    run_conflation(CLEAN_FILE, OUTPUT_DIR)
+    try:
+        run_conflation(CLEAN_FILE, OUTPUT_DIR)
+    except Exception as e:
+        print(f"!!! PIPELINE FAILED !!! Error: {e}")
+        sys.exit(1)
 
     print("--- DONE ---")
 

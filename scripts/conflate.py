@@ -2,29 +2,59 @@ import geopandas as gpd
 import pandas as pd
 import requests
 import os
+import time
 
 BUFFER_METERS = 65
 
 def get_osm_data(bbox):
     """
-    Fetches traffic signals from Overpass API.
+    Fetches traffic signals from Overpass API with retries and headers.
     """
     print("Fetching data from OpenStreetMap (Overpass API)...")
-    overpass_url = "http://overpass-api.de/api/interpreter"
     
+    # Use a different instance if the main one is down, or stick to main
+    overpass_url = "https://overpass-api.de/api/interpreter"
+    
+    # IMPORTANT: Overpass requires a User-Agent!
+    headers = {
+        'User-Agent': 'OSMBrazilConflation/1.0 (user: matheusgomesms)',
+        'Accept-Encoding': 'gzip'
+    }
+
     overpass_query = f"""
-    [out:json];
+    [out:json][timeout:60];
     node["highway"="traffic_signals"]({bbox[1]},{bbox[0]},{bbox[3]},{bbox[2]});
     out body;
     """
-    
-    try:
-        response = requests.get(overpass_url, params={'data': overpass_query})
-        data = response.json()
-    except Exception as e:
-        print(f"Error fetching OSM data: {e}")
-        return gpd.GeoDataFrame()
-    
+
+    # Retry logic (3 attempts)
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            print(f"Requesting Overpass (Attempt {attempt + 1}/{max_retries})...")
+            response = requests.get(overpass_url, params={'data': overpass_query}, headers=headers, timeout=60)
+            
+            # Check for HTTP errors (429, 500, etc.)
+            response.raise_for_status()
+            
+            # Try to parse JSON
+            data = response.json()
+            
+            # If successful, break the loop
+            break
+            
+        except Exception as e:
+            print(f"Error on attempt {attempt + 1}: {e}")
+            if attempt < max_retries - 1:
+                print("Waiting 10 seconds before retrying...")
+                time.sleep(10)
+            else:
+                # If we failed 3 times, CRASH the script so GitHub turns RED
+                print("CRITICAL: Failed to fetch OSM data after multiple attempts.")
+                print(f"Last response status: {response.status_code}")
+                print(f"Last response content snippet: {response.text[:200]}") # Print the error page text
+                raise ConnectionError("Could not fetch OSM data. Pipeline stopped.")
+
     osm_features = []
     for element in data.get('elements', []):
         tags = element.get('tags', {})
@@ -42,6 +72,7 @@ def get_osm_data(bbox):
         })
 
     if not osm_features:
+        print("Warning: Overpass returned 0 traffic lights. This might be correct, or an area error.")
         return gpd.GeoDataFrame()
 
     return gpd.GeoDataFrame.from_features(osm_features, crs="EPSG:4326")
