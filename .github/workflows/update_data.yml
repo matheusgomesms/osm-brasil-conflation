@@ -1,0 +1,44 @@
+name: Update Traffic Data
+
+on:
+  # Schedule to run at 06:00 UTC every Monday
+  schedule:
+    - cron: '0 6 * * 1'
+  # Allow running manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  update-map-data:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      # Give the bot permission to commit changes back to the repo
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip' # Caches dependencies to speed up runs
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Data Pipeline
+        run: |
+          python main.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/output/*.geojson
+          # The following command commits only if there are changes.
+          # If no changes, it returns exit code 0 (success) and prints "No changes to commit"
+          git commit -m "Auto-update: Latest traffic light data" || echo "No changes to commit"
+          git push
