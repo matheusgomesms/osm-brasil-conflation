@@ -13,8 +13,9 @@ def get_osm_data(bbox):
     print("Fetching data from OpenStreetMap (Overpass API)...")
     
     # Use a different instance if the main one is down, or stick to main
-    overpass_url = "https://overpass-api.de/api/interpreter"
-    
+    #overpass_url = "https://overpass-api.de/api/interpreter"
+    overpass_url = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
+
     # IMPORTANT: Overpass requires a User-Agent!
     headers = {
         'User-Agent': 'OSMBrazilConflation/1.0 (user: matheusgomesms)',
