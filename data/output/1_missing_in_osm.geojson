@@ -4,13 +4,8 @@
 "features": [
 { "type": "Feature", "properties": { "ref": "388", "start_date": "2000-02-14", "highway": "traffic_signals", "traffic_signals": "pedestrian_crossing" }, "geometry": { "type": "Point", "coordinates": [ -38.518166, -3.729873 ] } },
 { "type": "Feature", "properties": { "ref": "639", "start_date": "2010-12-14", "highway": "traffic_signals", "traffic_signals": "pedestrian_crossing" }, "geometry": { "type": "Point", "coordinates": [ -38.56229, -3.726668 ] } },
-{ "type": "Feature", "properties": { "ref": "659", "start_date": "2025-07-11", "highway": "traffic_signals", "traffic_signals": "signal" }, "geometry": { "type": "Point", "coordinates": [ -38.4737316, -3.8178834 ] } },
 { "type": "Feature", "properties": { "ref": "962", "start_date": "2019-02-20", "highway": "traffic_signals", "traffic_signals": "pedestrian_crossing" }, "geometry": { "type": "Point", "coordinates": [ -38.501803, -3.831962 ] } },
 { "type": "Feature", "properties": { "ref": "982", "start_date": "2018-11-22", "highway": "traffic_signals", "traffic_signals": "signal" }, "geometry": { "type": "Point", "coordinates": [ -38.606763, -3.80962 ] } },
-{ "type": "Feature", "properties": { "ref": "1005", "start_date": "2024-07-05", "highway": "traffic_signals", "traffic_signals": "signal" }, "geometry": { "type": "Point", "coordinates": [ -38.509586, -3.810643 ] } },
-{ "type": "Feature", "properties": { "ref": "1162", "start_date": "2024-12-11", "highway": "traffic_signals", "traffic_signals": "pedestrian_crossing" }, "geometry": { "type": "Point", "coordinates": [ -38.558937, -3.825602 ] } },
-{ "type": "Feature", "properties": { "ref": "1236", "start_date": "2024-06-03", "highway": "traffic_signals", "traffic_signals": "signal" }, "geometry": { "type": "Point", "coordinates": [ -38.5130889, -3.8117051 ] } },
-{ "type": "Feature", "properties": { "ref": "1238", "start_date": "2024-09-12", "highway": "traffic_signals", "traffic_signals": "pedestrian_crossing" }, "geometry": { "type": "Point", "coordinates": [ -38.5589266, -3.8209013 ] } },
 { "type": "Feature", "properties": { "ref": "DETRAN", "start_date": "2018-11-22", "highway": "traffic_signals", "traffic_signals": "signal" }, "geometry": { "type": "Point", "coordinates": [ -38.6066747, -3.8095092 ] } }
 ]
 }
