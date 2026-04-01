@@ -1,92 +1,694 @@
 {
-"type": "FeatureCollection",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "osm_id": 253406658, "ref": "81", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5239299, -3.7609442 ] } },
-{ "type": "Feature", "properties": { "osm_id": 264770318, "ref": "47", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5349561, -3.7444891 ] } },
-{ "type": "Feature", "properties": { "osm_id": 264770327, "ref": "47", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5349768, -3.7445536 ] } },
-{ "type": "Feature", "properties": { "osm_id": 264770467, "ref": "456", "start_date": "2001-06-16" }, "geometry": { "type": "Point", "coordinates": [ -38.5401075, -3.7382065 ] } },
-{ "type": "Feature", "properties": { "osm_id": 264770469, "ref": "454", "start_date": "2001-06-16" }, "geometry": { "type": "Point", "coordinates": [ -38.5381615, -3.7399022 ] } },
-{ "type": "Feature", "properties": { "osm_id": 264770581, "ref": "866", "start_date": "2016-07-06" }, "geometry": { "type": "Point", "coordinates": [ -38.5399053, -3.7336049 ] } },
-{ "type": "Feature", "properties": { "osm_id": 264770713, "ref": "318", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5137775, -3.7494667 ] } },
-{ "type": "Feature", "properties": { "osm_id": 264898894, "ref": "896", "start_date": "2016-10-06" }, "geometry": { "type": "Point", "coordinates": [ -38.538842, -3.7573478 ] } },
-{ "type": "Feature", "properties": { "osm_id": 264898902, "ref": "189", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5342544, -3.7451704 ] } },
-{ "type": "Feature", "properties": { "osm_id": 264900316, "ref": "325", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.539251, -3.7489974 ] } },
-{ "type": "Feature", "properties": { "osm_id": 265075233, "ref": "1222", "start_date": "2024-01-18" }, "geometry": { "type": "Point", "coordinates": [ -38.5488647, -3.738249 ] } },
-{ "type": "Feature", "properties": { "osm_id": 265075399, "ref": "594", "start_date": "2011-07-08" }, "geometry": { "type": "Point", "coordinates": [ -38.5631449, -3.7460521 ] } },
-{ "type": "Feature", "properties": { "osm_id": 265626362, "ref": "189", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5342379, -3.7451008 ] } },
-{ "type": "Feature", "properties": { "osm_id": 265639804, "ref": "325", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5393073, -3.7491855 ] } },
-{ "type": "Feature", "properties": { "osm_id": 265639830, "ref": "1123", "start_date": "2020-07-24" }, "geometry": { "type": "Point", "coordinates": [ -38.5475423, -3.7620642 ] } },
-{ "type": "Feature", "properties": { "osm_id": 571723582, "ref": "392", "start_date": "2000-07-07" }, "geometry": { "type": "Point", "coordinates": [ -38.4918563, -3.7427522 ] } },
-{ "type": "Feature", "properties": { "osm_id": 616541926, "ref": "690", "start_date": "2012-10-11" }, "geometry": { "type": "Point", "coordinates": [ -38.5067652, -3.7521818 ] } },
-{ "type": "Feature", "properties": { "osm_id": 622022654, "ref": "DETRAN", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.481648, -3.7744443 ] } },
-{ "type": "Feature", "properties": { "osm_id": 626124798, "ref": "1148", "start_date": "2020-10-08" }, "geometry": { "type": "Point", "coordinates": [ -38.5443262, -3.7350574 ] } },
-{ "type": "Feature", "properties": { "osm_id": 975719187, "ref": "DETRAN", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.4901626, -3.808961 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1371756515, "ref": "DETRAN", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.4824902, -3.833859 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1704819475, "ref": "1116", "start_date": "2020-02-12" }, "geometry": { "type": "Point", "coordinates": [ -38.4940123, -3.8317273 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1728558941, "ref": "866", "start_date": "2016-07-06" }, "geometry": { "type": "Point", "coordinates": [ -38.539945, -3.7337229 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1781269498, "ref": "DETRAN", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.4893704, -3.8080478 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1781269498, "ref": "DETRAN", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.4893704, -3.8080478 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1952017422, "ref": "417", "start_date": "2001-05-10" }, "geometry": { "type": "Point", "coordinates": [ -38.4886045, -3.7359563 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1953622384, "ref": "563", "start_date": "2008-09-18" }, "geometry": { "type": "Point", "coordinates": [ -38.5156772, -3.748878 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1993225702, "ref": "142", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.540993, -3.7393101 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1993225734, "ref": "44", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5402579, -3.7399417 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1993225765, "ref": "315", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5241723, -3.7486056 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1993226022, "ref": "44", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5402221, -3.7400725 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1993226024, "ref": "44", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5403123, -3.7399979 ] } },
-{ "type": "Feature", "properties": { "osm_id": 1994173279, "ref": "189", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5342837, -3.7452944 ] } },
-{ "type": "Feature", "properties": { "osm_id": 2275680727, "ref": "455", "start_date": "2001-06-16" }, "geometry": { "type": "Point", "coordinates": [ -38.5391599, -3.7390514 ] } },
-{ "type": "Feature", "properties": { "osm_id": 2275680730, "ref": "455", "start_date": "2001-06-16" }, "geometry": { "type": "Point", "coordinates": [ -38.5392726, -3.738948 ] } },
-{ "type": "Feature", "properties": { "osm_id": 2299255510, "ref": "DETRAN", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.4894598, -3.8085419 ] } },
-{ "type": "Feature", "properties": { "osm_id": 2299255510, "ref": "DETRAN", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.4894598, -3.8085419 ] } },
-{ "type": "Feature", "properties": { "osm_id": 2387692446, "ref": "315", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5239741, -3.7485251 ] } },
-{ "type": "Feature", "properties": { "osm_id": 2387692449, "ref": "315", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5240138, -3.7484493 ] } },
-{ "type": "Feature", "properties": { "osm_id": 2508980130, "ref": "1069", "start_date": "2019-08-08" }, "geometry": { "type": "Point", "coordinates": [ -38.5180357, -3.7951825 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4345811070, "ref": "142", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5410452, -3.7393716 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4362712191, "ref": "887", "start_date": "2016-08-20" }, "geometry": { "type": "Point", "coordinates": [ -38.5444555, -3.7335963 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4370885002, "ref": "887", "start_date": "2016-08-20" }, "geometry": { "type": "Point", "coordinates": [ -38.5444118, -3.7332993 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4374899385, "ref": "887", "start_date": "2016-08-20" }, "geometry": { "type": "Point", "coordinates": [ -38.5443775, -3.7335102 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4392042993, "ref": "760", "start_date": "2016-08-20" }, "geometry": { "type": "Point", "coordinates": [ -38.4976845, -3.7330134 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4392042995, "ref": "760", "start_date": "2016-08-20" }, "geometry": { "type": "Point", "coordinates": [ -38.4975841, -3.7337278 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4392042995, "ref": "928", "start_date": "2017-05-05" }, "geometry": { "type": "Point", "coordinates": [ -38.4975841, -3.7337278 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4392042996, "ref": "760", "start_date": "2016-08-20" }, "geometry": { "type": "Point", "coordinates": [ -38.4975144, -3.733749 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4392042996, "ref": "928", "start_date": "2017-05-05" }, "geometry": { "type": "Point", "coordinates": [ -38.4975144, -3.733749 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4414764943, "ref": "672", "start_date": "2012-01-27" }, "geometry": { "type": "Point", "coordinates": [ -38.5416536, -3.741337 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4414764944, "ref": "672", "start_date": "2012-01-27" }, "geometry": { "type": "Point", "coordinates": [ -38.5415571, -3.7414428 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4421986810, "ref": "1069", "start_date": "2019-08-08" }, "geometry": { "type": "Point", "coordinates": [ -38.5181313, -3.7951358 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4424212826, "ref": "385", "start_date": "2000-02-02" }, "geometry": { "type": "Point", "coordinates": [ -38.5982662, -3.8008758 ] } },
-{ "type": "Feature", "properties": { "osm_id": 4769937125, "ref": "78", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5390235, -3.7411103 ] } },
-{ "type": "Feature", "properties": { "osm_id": 5387926404, "ref": "406", "start_date": "2000-11-06" }, "geometry": { "type": "Point", "coordinates": [ -38.5529, -3.7492699 ] } },
-{ "type": "Feature", "properties": { "osm_id": 5716066213, "ref": "923", "start_date": "2017-05-18" }, "geometry": { "type": "Point", "coordinates": [ -38.5798335, -3.7841303 ] } },
-{ "type": "Feature", "properties": { "osm_id": 5716066216, "ref": "923", "start_date": "2017-05-18" }, "geometry": { "type": "Point", "coordinates": [ -38.5798993, -3.7840236 ] } },
-{ "type": "Feature", "properties": { "osm_id": 5717412167, "ref": "604", "start_date": "2009-09-12" }, "geometry": { "type": "Point", "coordinates": [ -38.5685109, -3.739473 ] } },
-{ "type": "Feature", "properties": { "osm_id": 5717412169, "ref": "604", "start_date": "2009-09-12" }, "geometry": { "type": "Point", "coordinates": [ -38.56862180000001, -3.7393406 ] } },
-{ "type": "Feature", "properties": { "osm_id": 5906869805, "ref": "44", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5401683, -3.7400191 ] } },
-{ "type": "Feature", "properties": { "osm_id": 6000495084, "ref": "756", "start_date": "2014-05-21" }, "geometry": { "type": "Point", "coordinates": [ -38.4968468, -3.7334264 ] } },
-{ "type": "Feature", "properties": { "osm_id": 6483151134, "ref": "970", "start_date": "2018-10-26" }, "geometry": { "type": "Point", "coordinates": [ -38.5252138, -3.7460009 ] } },
-{ "type": "Feature", "properties": { "osm_id": 6901036116, "ref": "594", "start_date": "2011-07-08" }, "geometry": { "type": "Point", "coordinates": [ -38.563143, -3.7459633 ] } },
-{ "type": "Feature", "properties": { "osm_id": 6901036179, "ref": "594", "start_date": "2011-07-08" }, "geometry": { "type": "Point", "coordinates": [ -38.5630632, -3.7460652 ] } },
-{ "type": "Feature", "properties": { "osm_id": 6914278878, "ref": "969", "start_date": "2018-11-03" }, "geometry": { "type": "Point", "coordinates": [ -38.5246749, -3.7388229 ] } },
-{ "type": "Feature", "properties": { "osm_id": 6914297940, "ref": "970", "start_date": "2018-10-26" }, "geometry": { "type": "Point", "coordinates": [ -38.5253514, -3.7461751 ] } },
-{ "type": "Feature", "properties": { "osm_id": 7057389994, "ref": "223", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.5398992, -3.7304609 ] } },
-{ "type": "Feature", "properties": { "osm_id": 8001444324, "ref": "1148", "start_date": "2020-10-08" }, "geometry": { "type": "Point", "coordinates": [ -38.5441319, -3.7350197 ] } },
-{ "type": "Feature", "properties": { "osm_id": 8001444325, "ref": "1148", "start_date": "2020-10-08" }, "geometry": { "type": "Point", "coordinates": [ -38.5442219, -3.7350372 ] } },
-{ "type": "Feature", "properties": { "osm_id": 8483335653, "ref": "1068", "start_date": "2019-08-07" }, "geometry": { "type": "Point", "coordinates": [ -38.5198384, -3.8012288 ] } },
-{ "type": "Feature", "properties": { "osm_id": 12301411512, "ref": "DETRAN", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.4826338, -3.8338133 ] } },
-{ "type": "Feature", "properties": { "osm_id": 12506742436, "ref": "1069", "start_date": "2019-08-08" }, "geometry": { "type": "Point", "coordinates": [ -38.5182127, -3.7950456 ] } },
-{ "type": "Feature", "properties": { "osm_id": 12633133763, "ref": "DETRAN", "start_date": "" }, "geometry": { "type": "Point", "coordinates": [ -38.4819099, -3.7743583 ] } },
-{ "type": "Feature", "properties": { "osm_id": 12686676506, "ref": "835", "start_date": "2016-10-28" }, "geometry": { "type": "Point", "coordinates": [ -38.5851196, -3.7419717 ] } },
-{ "type": "Feature", "properties": { "osm_id": 12801930611, "ref": "609", "start_date": "2009-11-12" }, "geometry": { "type": "Point", "coordinates": [ -38.572139, -3.7369902 ] } },
-{ "type": "Feature", "properties": { "osm_id": 12801930614, "ref": "609", "start_date": "2009-11-12" }, "geometry": { "type": "Point", "coordinates": [ -38.5718449, -3.736954 ] } },
-{ "type": "Feature", "properties": { "osm_id": 13536993125, "ref": "1141", "start_date": "2020-11-18" }, "geometry": { "type": "Point", "coordinates": [ -38.5681619, -3.7364361 ] } },
-{ "type": "Feature", "properties": { "osm_id": 13536993139, "ref": "1141", "start_date": "2020-11-18" }, "geometry": { "type": "Point", "coordinates": [ -38.5683954, -3.7364681 ] } },
-{ "type": "Feature", "properties": { "osm_id": 13536993156, "ref": "413", "start_date": "2001-03-14" }, "geometry": { "type": "Point", "coordinates": [ -38.5662826, -3.7360515 ] } },
-{ "type": "Feature", "properties": { "osm_id": 13536993157, "ref": "413", "start_date": "2001-03-14" }, "geometry": { "type": "Point", "coordinates": [ -38.5663978, -3.7360759 ] } },
-{ "type": "Feature", "properties": { "osm_id": 13569316791, "ref": "1149", "start_date": "2020-10-22" }, "geometry": { "type": "Point", "coordinates": [ -38.54313, -3.7409592 ] } },
-{ "type": "Feature", "properties": { "osm_id": 13569316792, "ref": "1149", "start_date": "2020-10-22" }, "geometry": { "type": "Point", "coordinates": [ -38.5432167, -3.7410855 ] } },
-{ "type": "Feature", "properties": { "osm_id": 13608075591, "ref": "726", "start_date": "2013-07-11" }, "geometry": { "type": "Point", "coordinates": [ -38.5236191, -3.7359275 ] } },
-{ "type": "Feature", "properties": { "osm_id": 13608075592, "ref": "726", "start_date": "2013-07-11" }, "geometry": { "type": "Point", "coordinates": [ -38.5236567, -3.7359424 ] } },
-{ "type": "Feature", "properties": { "osm_id": 13612506893, "ref": "1100", "start_date": "2019-10-31" }, "geometry": { "type": "Point", "coordinates": [ -38.5292341, -3.7319608 ] } },
-{ "type": "Feature", "properties": { "osm_id": 13612506894, "ref": "1100", "start_date": "2019-10-31" }, "geometry": { "type": "Point", "coordinates": [ -38.5292572, -3.732037 ] } }
-]
+    "type": "FeatureCollection",
+    "generator": "JOSM",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2011-07-08",
+                "ref": "594",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.56314300000,
+                    -3.74596330000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2019-08-08",
+                "highway": "traffic_signals",
+                "ref": "1069",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.51821270000,
+                    -3.79504560000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "325",
+                "start_date": "",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.53930730000,
+                    -3.74918550000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "189",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.53428370000,
+                    -3.74529440000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "DETRAN",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.48263380000,
+                    -3.83381330000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2019-08-08",
+                "highway": "traffic_signals",
+                "ref": "1069",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.51803570000,
+                    -3.79518250000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2011-07-08",
+                "ref": "594",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.56306320000,
+                    -3.74606520000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "315",
+                "start_date": "",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.52401380000,
+                    -3.74844930000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "1123",
+                "highway": "traffic_signals",
+                "start_date": "2020-07-24",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.54754230000,
+                    -3.76206420000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2017-05-18",
+                "highway": "traffic_signals",
+                "ref": "923",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.57989930000,
+                    -3.78402360000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2020-11-18",
+                "ref": "1141",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.56839540000,
+                    -3.73646810000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "1068",
+                "start_date": "2019-08-07",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.51983840000,
+                    -3.80122880000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "315",
+                "start_date": "",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.52417230000,
+                    -3.74860560000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2009-09-12",
+                "highway": "traffic_signals",
+                "ref": "604",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.56851090000,
+                    -3.73947300000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "413",
+                "start_date": "2001-03-14",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.56628260000,
+                    -3.73605150000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "47",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.53495610000,
+                    -3.74448910000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "315",
+                "start_date": "",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.52397410000,
+                    -3.74852510000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "385",
+                "start_date": "2000-02-02",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.59826620000,
+                    -3.80087580000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "DETRAN",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.48249020000,
+                    -3.83385900000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "970",
+                "highway": "traffic_signals",
+                "start_date": "2018-10-26",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.52521380000,
+                    -3.74600090000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2011-07-08",
+                "ref": "594",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.56314490000,
+                    -3.74605210000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "DETRAN",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.48945980000,
+                    -3.80854190000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2000-11-06",
+                "highway": "traffic_signals",
+                "ref": "406",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.55290000000,
+                    -3.74926990000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "DETRAN",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.48164800000,
+                    -3.77444430000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "896",
+                "highway": "traffic_signals",
+                "start_date": "2016-10-06",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.53884200000,
+                    -3.75734780000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2020-10-22",
+                "highway": "traffic_signals",
+                "ref": "1149",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.54321670000,
+                    -3.74108550000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "DETRAN",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.48937040000,
+                    -3.80804780000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "traffic_signals",
+                "ref": "609",
+                "start_date": "2009-11-12",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.57213900000,
+                    -3.73699020000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "325",
+                "start_date": "",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.53925100000,
+                    -3.74899740000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "DETRAN",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.49016260000,
+                    -3.80896100000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "traffic_signals",
+                "ref": "609",
+                "start_date": "2009-11-12",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.57184490000,
+                    -3.73695400000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2020-11-18",
+                "ref": "1141",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.56816190000,
+                    -3.73643610000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "189",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.53425440000,
+                    -3.74517040000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2020-10-22",
+                "highway": "traffic_signals",
+                "ref": "1149",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.54313000000,
+                    -3.74095920000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2017-05-18",
+                "highway": "traffic_signals",
+                "ref": "923",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.57983350000,
+                    -3.78413030000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "970",
+                "highway": "traffic_signals",
+                "start_date": "2018-10-26",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.52535140000,
+                    -3.74617510000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2009-09-12",
+                "highway": "traffic_signals",
+                "ref": "604",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.56862180000,
+                    -3.73934060000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "81",
+                "start_date": "",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.52392990000,
+                    -3.76094420000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "DETRAN",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.48190990000,
+                    -3.77435830000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2019-08-08",
+                "highway": "traffic_signals",
+                "ref": "1069",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.51813130000,
+                    -3.79513580000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "ref": "413",
+                "start_date": "2001-03-14",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.56639780000,
+                    -3.73607590000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "47",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.53497680000,
+                    -3.74455360000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "",
+                "ref": "189",
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.53423790000,
+                    -3.74510080000
+                ]
+            }
+        }
+    ]
 }
