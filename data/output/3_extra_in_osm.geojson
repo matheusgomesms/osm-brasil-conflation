@@ -54,6 +54,8 @@
 { "type": "Feature", "properties": { "osm_id": 13619758513, "ref": null, "start_date": "2025-07-05" }, "geometry": { "type": "Point", "coordinates": [ -38.4794865, -3.8019126 ] } },
 { "type": "Feature", "properties": { "osm_id": 13619758514, "ref": null, "start_date": "2025-07-05" }, "geometry": { "type": "Point", "coordinates": [ -38.4793337, -3.8019387 ] } },
 { "type": "Feature", "properties": { "osm_id": 13619758515, "ref": null, "start_date": "2025-07-05" }, "geometry": { "type": "Point", "coordinates": [ -38.4793524, -3.8020421 ] } },
-{ "type": "Feature", "properties": { "osm_id": 13619758518, "ref": null, "start_date": "2025-07-05" }, "geometry": { "type": "Point", "coordinates": [ -38.4795049, -3.8020328 ] } }
+{ "type": "Feature", "properties": { "osm_id": 13619758518, "ref": null, "start_date": "2025-07-05" }, "geometry": { "type": "Point", "coordinates": [ -38.4795049, -3.8020328 ] } },
+{ "type": "Feature", "properties": { "osm_id": 13729237034, "ref": null, "start_date": "2026-03-13" }, "geometry": { "type": "Point", "coordinates": [ -38.5921527, -3.7568904 ] } },
+{ "type": "Feature", "properties": { "osm_id": 13729237035, "ref": null, "start_date": "2026-03-13" }, "geometry": { "type": "Point", "coordinates": [ -38.5920139, -3.7568822 ] } }
 ]
 }
